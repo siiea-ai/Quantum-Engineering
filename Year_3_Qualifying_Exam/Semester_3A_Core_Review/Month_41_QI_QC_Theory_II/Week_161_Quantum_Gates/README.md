@@ -1,0 +1,193 @@
+# Week 161: Quantum Gates
+
+## Single-Qubit Gates, Two-Qubit Gates, and Universality
+
+**Days:** 1121-1127
+**Theme:** Comprehensive mastery of quantum gate theory and universal computation
+
+---
+
+## Week Overview
+
+This week provides deep review of quantum gate theory, from the mathematical foundations of single-qubit rotations through the proof of universal computation. The material is essential for qualifying examinations, where students must demonstrate both computational fluency with gate operations and theoretical understanding of universality and the Solovay-Kitaev theorem.
+
+### Core Learning Objectives
+
+By the end of this week, you will be able to:
+
+1. Express any single-qubit gate as a rotation on the Bloch sphere
+2. Decompose arbitrary single-qubit unitaries using ZYZ or ZXZ conventions
+3. Characterize two-qubit gates using entangling power and local equivalence
+4. Prove that Clifford+T (or H+T+CNOT) forms a universal gate set
+5. State and apply the Solovay-Kitaev theorem for gate approximation
+6. Synthesize unitaries from finite gate sets with optimal gate count
+
+---
+
+## Daily Schedule
+
+### Day 1121 (Monday): Single-Qubit Gates I
+**Focus:** Pauli matrices, Bloch sphere representation, rotation operators
+
+**Key Topics:**
+- Pauli matrices as generators of SU(2)
+- Bloch sphere parametrization of pure states
+- Rotation operators: $R_x(\theta)$, $R_y(\theta)$, $R_z(\theta)$
+- Physical interpretation of rotations
+
+**Essential Formulas:**
+$$R_{\hat{n}}(\theta) = e^{-i\theta\hat{n}\cdot\vec{\sigma}/2} = \cos\frac{\theta}{2}I - i\sin\frac{\theta}{2}(\hat{n}\cdot\vec{\sigma})$$
+
+### Day 1122 (Tuesday): Single-Qubit Gates II
+**Focus:** Euler decompositions and gate synthesis
+
+**Key Topics:**
+- ZYZ decomposition: $U = e^{i\alpha}R_z(\beta)R_y(\gamma)R_z(\delta)$
+- Alternative decompositions: ZXZ, XYX
+- Relationship between SU(2) and SO(3)
+- Global phase considerations
+
+**Key Skill:** Given any $2\times 2$ unitary matrix, express it in ZYZ form
+
+### Day 1123 (Wednesday): Two-Qubit Gates I
+**Focus:** CNOT, controlled operations, entanglement generation
+
+**Key Topics:**
+- CNOT gate matrix and action on computational basis
+- Controlled-U gates for arbitrary U
+- Creating Bell states with CNOT
+- Entangling power quantification
+
+**Essential Formula:**
+$$\text{CNOT} = |0\rangle\langle 0| \otimes I + |1\rangle\langle 1| \otimes X = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{pmatrix}$$
+
+### Day 1124 (Thursday): Two-Qubit Gates II
+**Focus:** SWAP gates, iSWAP, Cartan decomposition
+
+**Key Topics:**
+- SWAP and $\sqrt{\text{SWAP}}$ gates
+- iSWAP and fSim gates (superconducting qubits)
+- KAK (Cartan) decomposition of two-qubit unitaries
+- Local equivalence classes
+
+**Essential Formula:**
+$$U = (A_1 \otimes A_2) \cdot e^{i(c_1 XX + c_2 YY + c_3 ZZ)} \cdot (B_1 \otimes B_2)$$
+
+### Day 1125 (Friday): Universal Gate Sets
+**Focus:** Proving universality
+
+**Key Topics:**
+- Definition of universality (exact vs. approximate)
+- Proving {H, T, CNOT} is universal
+- Clifford group and magic states
+- Native gate sets on different hardware platforms
+
+**Key Theorem:** Any finite gate set generating a dense subgroup of SU($2^n$) is computationally universal.
+
+### Day 1126 (Saturday): Solovay-Kitaev Theorem
+**Focus:** Efficient approximation of arbitrary unitaries
+
+**Key Topics:**
+- Statement of Solovay-Kitaev theorem
+- Proof outline and key lemmas
+- Algorithm description and complexity $O(\log^{3.97}(1/\epsilon))$
+- Comparison with optimal gate synthesis
+
+**Theorem Statement:**
+If $\mathcal{G}$ generates a dense subgroup of SU(2), then any $U \in \text{SU}(2)$ can be $\epsilon$-approximated by $O(\log^c(1/\epsilon))$ gates from $\mathcal{G}$.
+
+### Day 1127 (Sunday): Gate Synthesis & Week Review
+**Focus:** Optimal synthesis techniques, comprehensive review
+
+**Key Topics:**
+- T-count and T-depth optimization
+- Clifford+T synthesis algorithms
+- Review of all week's material
+- Practice problems and self-assessment
+
+---
+
+## Key Concepts Summary
+
+### The Pauli Matrices
+$$X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
+
+### Standard Single-Qubit Gates
+$$H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}, \quad S = \begin{pmatrix} 1 & 0 \\ 0 & i \end{pmatrix}, \quad T = \begin{pmatrix} 1 & 0 \\ 0 & e^{i\pi/4} \end{pmatrix}$$
+
+### Rotation Gates
+$$R_x(\theta) = \begin{pmatrix} \cos\frac{\theta}{2} & -i\sin\frac{\theta}{2} \\ -i\sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}$$
+
+$$R_y(\theta) = \begin{pmatrix} \cos\frac{\theta}{2} & -\sin\frac{\theta}{2} \\ \sin\frac{\theta}{2} & \cos\frac{\theta}{2} \end{pmatrix}$$
+
+$$R_z(\theta) = \begin{pmatrix} e^{-i\theta/2} & 0 \\ 0 & e^{i\theta/2} \end{pmatrix}$$
+
+### Clifford Group Properties
+- Generated by {H, S, CNOT}
+- Finite group (up to global phase)
+- Maps Pauli group to itself under conjugation
+- Efficiently simulable classically (Gottesman-Knill)
+
+---
+
+## Qualifying Exam Focus Areas
+
+### Commonly Asked Questions
+1. "Prove that {H, T, CNOT} is universal for quantum computation"
+2. "Given a unitary matrix, decompose it into elementary gates"
+3. "Explain the Solovay-Kitaev theorem and its significance"
+4. "What is the Clifford group and why is it important?"
+5. "How many CNOT gates are needed to implement an arbitrary two-qubit gate?"
+
+### Proof Techniques to Master
+- Density arguments for universality
+- Lie algebra generation
+- KAK decomposition derivation
+- Gate counting lower bounds
+
+---
+
+## Study Resources
+
+### Primary References
+- Nielsen & Chuang, Chapter 4 (Quantum circuits)
+- Kaye, Laflamme & Mosca, Chapter 4 (Universality)
+
+### Research Papers
+- Solovay (1995), "Lie Groups and Quantum Circuits"
+- Dawson & Nielsen (2006), "The Solovay-Kitaev Algorithm"
+- Barenco et al. (1995), "Elementary gates for quantum computation"
+
+### Computational Tools
+- Qiskit transpiler for gate decomposition
+- Cirq gate synthesis tools
+- PennyLane device-specific compilation
+
+---
+
+## Week Deliverables
+
+| Component | Description | Location |
+|-----------|-------------|----------|
+| Review Guide | Comprehensive topic summary | `Review_Guide.md` |
+| Problem Set | 30 problems, all difficulty levels | `Problem_Set.md` |
+| Solutions | Complete worked solutions | `Problem_Solutions.md` |
+| Oral Practice | Discussion questions, mock scenarios | `Oral_Practice.md` |
+| Self-Assessment | Mastery checklists, diagnostics | `Self_Assessment.md` |
+
+---
+
+## Success Criteria
+
+By week's end, you should be able to:
+
+- [ ] Write down any standard single-qubit gate matrix from memory
+- [ ] Decompose an arbitrary 2x2 unitary into ZYZ form
+- [ ] Construct CNOT from other two-qubit gates
+- [ ] Explain universality proof strategy
+- [ ] State Solovay-Kitaev with correct complexity
+- [ ] Discuss hardware-native gate sets for major platforms
+
+---
+
+*This week establishes the foundation for understanding quantum circuits and prepares you for algorithm analysis in subsequent weeks.*

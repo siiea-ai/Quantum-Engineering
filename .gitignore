@@ -1,0 +1,190 @@
+# =========================
+# Quantum Engineering Curriculum
+# .gitignore
+# =========================
+
+# --------------------------
+# macOS
+# --------------------------
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# --------------------------
+# Windows
+# --------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# --------------------------
+# Linux
+# --------------------------
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# --------------------------
+# Editor & IDE
+# --------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+.classpath
+*.code-workspace
+
+# --------------------------
+# Python
+# --------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --------------------------
+# Jupyter Notebooks
+# --------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# --------------------------
+# LaTeX
+# --------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+*.dvi
+*.pdf
+*.ps
+*.eps-converted-to.pdf
+
+# --------------------------
+# Temporary Files
+# --------------------------
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+*.orig
+
+# --------------------------
+# Logs
+# --------------------------
+*.log
+logs/
+log/
+
+# --------------------------
+# Build Outputs
+# --------------------------
+build/
+dist/
+out/
+target/
+*.exe
+*.dll
+*.o
+*.a
+
+# --------------------------
+# Coverage Reports
+# --------------------------
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# --------------------------
+# Virtual Environments
+# --------------------------
+.venv/
+venv/
+ENV/
+env/
+.conda/
+
+# --------------------------
+# AI/Claude Tools
+# --------------------------
+.claude/
+.serena/
+CLAUDE.md
+
+# --------------------------
+# Secrets (Never Commit)
+# --------------------------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+credentials/
+config.local.*
+
+# --------------------------
+# Large Data Files
+# --------------------------
+*.hdf5
+*.h5
+*.npy
+*.npz
+*.pkl
+*.pickle
+data/
+datasets/
+
+# --------------------------
+# Documentation Build
+# --------------------------
+docs/_build/
+site/
+
+# --------------------------
+# Node (if any web tools)
+# --------------------------
+node_modules/
+npm-debug.log
+yarn-error.log

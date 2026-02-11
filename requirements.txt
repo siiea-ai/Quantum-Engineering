@@ -1,0 +1,30 @@
+# Quantum Engineering Curriculum — Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Core scientific computing (Year 0+)
+numpy>=1.26
+scipy>=1.12
+matplotlib>=3.8
+sympy>=1.12
+
+# Jupyter environment
+jupyter>=1.0
+jupyterlab>=4.0
+ipywidgets>=8.1
+
+# Quantum computing frameworks (Year 1+)
+qiskit>=1.0
+qiskit-aer>=0.13
+qutip>=5.0
+pennylane>=0.34
+
+# Visualization
+plotly>=5.18
+
+# Apple Silicon acceleration (optional — Mac Studio / MacBook Pro)
+# Uncomment if running on Apple Silicon:
+# mlx>=0.6
+
+# Testing (development only)
+# pytest>=8.0
+# nbval>=0.11
